@@ -27,22 +27,22 @@ public:
     }
 
     // Реализация метода Re() для чтения
-    Type const & ReadReal(){
+    Type Re() const{
         return Real;
     }
 
     // Реализация метода Re() для модификации
-    Type & ModifyReal(){
+    Type & Re(){
         return Real;
     }
 
     // Реализация метода Im() для чтения
-    Type const & ReadImag(){
+    Type Im() const{
         return Imag;
     }
 
     // Реализация метода Im() для модификации
-    Type & ModifyImag(){
+    Type & Im(){
         return Imag;
     }
 
@@ -124,22 +124,22 @@ int main(){
     ComplexNumber<double> num3(3.24, 4.15);
 
     // Получаем значения Re и Im для каждого числа
-    cout << num1.ReadReal() << " " << num1.ReadImag() << endl;
-    cout << num2.ReadReal() << " " << num2.ReadImag() << endl;
-    cout << num3.ReadReal() << " " << num3.ReadImag() << endl;
+    cout << num1.Re() << " " << num1.Im() << endl;
+    cout << num2.Re() << " " << num2.Im() << endl;
+    cout << num3.Re() << " " << num3.Im() << endl;
     
     // Изменяем мнимую и действительную часть числа num3
     // Получаем ссылку на действит часть
-    double & Re3 = num3.ModifyReal();
+    double & Re3 = num3.Re();
     // Присваиваем новое значение
     Re3 = 6.78;
     // Получаем ссылку на мнимую часть
-    double & Im3 = num3.ModifyImag();
+    double & Im3 = num3.Im();
     // Присваиваем новое значение
     Im3 = 8.92;
 
     // Выводим результат
-    cout << num3.ReadReal() << " " << num3.ReadImag() << endl;
+    cout << num3.Re() << " " << num3.Im() << endl;
 
 
     ComplexNumber<double> num4(1, 1);
@@ -151,7 +151,7 @@ int main(){
     cout << num4.ArgDeg() << endl;
     // Метод Conj
     ComplexNumber<double> num5 = num4.Conj();
-    cout << num5.ReadReal() << " " << num5.ReadImag() << endl;
+    cout << num5.Re() << " " << num5.Im() << endl;
 
 
     // Тестируем фабрики
@@ -163,8 +163,8 @@ int main(){
 
     // Проверка
     cout << "Действительные и мнимые части комплексных чисел, созданных с помощью фабрик" << endl;
-    cout << num6.ReadReal() << " " << num6.ReadImag() << endl;
-    cout << num7.ReadReal() << " " << num7.ReadImag() << endl;
+    cout << num6.Re() << " " << num6.Im() << endl;
+    cout << num7.Re() << " " << num7.Im() << endl;
     // Удаляем объекты
     delete ComplexNum1;
     delete ComplexNum2;
