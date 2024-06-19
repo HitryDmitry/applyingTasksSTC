@@ -23,22 +23,27 @@ fclose(fid);
 % комплексные числа
 x = complex(y(1,:),y(2,:));
 
-% В файле записан комплексный сигнал на нулевой частоте. Т.е. по сути в
-% файле записана комплексная огибающая сигнала. Поэтому достаточно взять
-% действительную часть abs(x).*cos(angle(x)) или real(x)
-modulating_signal = 2*real(x);
+% Из графика действительной части сигнала получаем, что нормированная
+% частота равна 360/180 (градусов/отсчет) или pi/90 (рад/отсчет)
+% С помощью ФНЧ выделяем низкочастотную составляющую
+filtered_signal = lowpass(x, pi/90);
+
+% Получаем модулирующий сигнал
+modulating_signal = 2*real(filtered_signal);
 
 % Добавим фильтр скользящего среднего
 windowSize = 10; 
 b = (1/windowSize)*ones(1,windowSize);
 a = 1;
-filtered_signal = filter(b,a,real(modulating_signal));
+average_filtered_signal = filter(b,a,real(modulating_signal));
 
 
-% sound(filtered_signal(1:200000), Fs_am);  % Перед проигрыванием уменьшить
+% sound(average_filtered_signal(1:200000), Fs_am);  % Перед проигрыванием уменьшить
 % звук компьютера!!
 % figure
-% plot(real(x(1:1000)));
+% plot(average_filtered_signal(1:10000));
+% figure
+% plot(real(fft(x(1:10000))));
 
 %% Демодуляция FM сигнала
 
@@ -59,10 +64,21 @@ ImagParts = realAndImag(2,:);
 fclose(file_FM);
 ComplexSamples = complex(RealParts, ImagParts);
 
+% % Построим график сигнала, чтобы визуально определить удвоенную несущую
+% figure
+% plot(abs(ComplexSamples(1:10000)));
+% figure
+% % plot(angle(ComplexSamples(1:10000)));
+% plot(abs(fft(ComplexSamples(1:1000000))));
+
+% Из графика действительной части сигнала получаем, что нормированная
+% частота равна 360/180 (градусов/отсчет) или pi/90 (рад/отсчет)
+% С помощью ФНЧ выделяем низкочастотную составляющую
+filtered_signal = lowpass(ComplexSamples, pi/90);
+
+
 % вычисляем зависимость чатоты от времени. w(t) = w_д*s_m(t), w_д -
 % девиация частоты. s_m(t) - модулирующая функция
-
-% s_m = (gradient(ImagParts).*RealParts-gradient(RealParts).*ImagParts)./(RealParts.^2+ImagParts.^2);
 s_m = atan2(ImagParts, RealParts);
 s_m = gradient(s_m);
 
@@ -74,4 +90,4 @@ filtered_signal = filter(b,a,real(s_m));
 
 % figure
 % plot(s_m(1:100000));
-sound(filtered_signal, Fs_fm);
+sound(filtered_signal(1:500000), Fs_fm);
