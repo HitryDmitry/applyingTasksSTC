@@ -49,12 +49,12 @@ average_filtered_signal = filter(b,a,real(modulating_signal));
 
 % Частота дискретизации FM сигнала
 % Fs_fm = 500*1e6;
-% Так как матлаб в функции sound не позволяет использовать число > 1e6,
-% используем 1e6
-Fs_fm = 100000;
+% Так в функции sound частота дискретизации должна лежать в пределах от
+% 1000 до 384 000, то используем 192000
+Fs_fm = 192000;
 
 % Получение комплексных отсчетов аналогично АМ
-nsamps = (1024*1024*2);
+nsamps = (1024*1024);
 nstart = 1;
 file_FM = fopen('file1EuropaPlus.bin');
 fseek(file_FM, nstart, 'bof');
@@ -64,30 +64,29 @@ ImagParts = realAndImag(2,:);
 fclose(file_FM);
 ComplexSamples = complex(RealParts, ImagParts);
 
-% % Построим график сигнала, чтобы визуально определить удвоенную несущую
-% figure
-% plot(abs(ComplexSamples(1:10000)));
-% figure
-% % plot(angle(ComplexSamples(1:10000)));
-% plot(abs(fft(ComplexSamples(1:1000000))));
+% Прореживание
+DownsampledSignal = downsample(ComplexSamples, 2.605e+03);
 
-% Из графика действительной части сигнала получаем, что нормированная
-% частота равна 360/180 (градусов/отсчет) или pi/90 (рад/отсчет)
+% До прореживания необходимо пропустить сигнал через ФНЧ
+filtered_signal = lowpass(ComplexSamples, 96000, Fs_fm);
+
 % С помощью ФНЧ выделяем низкочастотную составляющую
-filtered_signal = lowpass(ComplexSamples, pi/90);
 
 
 % вычисляем зависимость чатоты от времени. w(t) = w_д*s_m(t), w_д -
 % девиация частоты. s_m(t) - модулирующая функция
-s_m = atan2(ImagParts, RealParts);
+s_m = atan2(imag(filtered_signal), real(filtered_signal));
 s_m = gradient(s_m);
 
 % Добавим фильтр скользящего среднего
 windowSize = 10; 
 b = (1/windowSize)*ones(1,windowSize);
 a = 1;
-filtered_signal = filter(b,a,real(s_m));
+aver_filtered_signal = filter(b,a,s_m);
+
+% figure
+plot(abs(fft(s_m)));
 
 % figure
 % plot(s_m(1:100000));
-sound(filtered_signal(1:500000), Fs_fm);
+% sound(aver_filtered_signal(1:500000), Fs_fm);
