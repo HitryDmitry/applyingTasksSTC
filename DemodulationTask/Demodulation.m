@@ -7,7 +7,7 @@ clc
 nsamps = (1024*1024);
 % Частота дискретизации
 Fs_am = 32000;
-
+ 
 % номер позиции (символа), с которого начинаем чтение
 nstart = 1;
 % сохраняем id файла в переменную fid
@@ -26,8 +26,16 @@ x = complex(y(1,:),y(2,:));
 % В файле записан комплексный сигнал на нулевой частоте. Т.е. по сути в
 % файле записана комплексная огибающая сигнала. Поэтому достаточно взять
 % действительную часть abs(x).*cos(angle(x)) или real(x)
+modulating_signal = 2*real(x);
 
-% sound(abs(x).*cos(angle(x)), Fs_am);  # Перед проигрыванием уменьшить
+% Добавим фильтр скользящего среднего
+windowSize = 10; 
+b = (1/windowSize)*ones(1,windowSize);
+a = 1;
+filtered_signal = filter(b,a,real(modulating_signal));
+
+
+% sound(filtered_signal(1:200000), Fs_am);  % Перед проигрыванием уменьшить
 % звук компьютера!!
 % figure
 % plot(real(x(1:1000)));
@@ -58,6 +66,12 @@ ComplexSamples = complex(RealParts, ImagParts);
 s_m = atan2(ImagParts, RealParts);
 s_m = gradient(s_m);
 
+% Добавим фильтр скользящего среднего
+windowSize = 10; 
+b = (1/windowSize)*ones(1,windowSize);
+a = 1;
+filtered_signal = filter(b,a,real(s_m));
+
 % figure
 % plot(s_m(1:100000));
-% sound(s_m, Fs_fm);
+sound(filtered_signal, Fs_fm);
