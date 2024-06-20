@@ -64,6 +64,9 @@ ImagParts = realAndImag(2,:);
 fclose(file_FM);
 ComplexSamples = complex(RealParts, ImagParts);
 
+figure
+plot(abs(fft(ComplexSamples)));
+
 % Прореживание
 DownsampledSignal = downsample(ComplexSamples, 2.605e+03);
 
@@ -84,7 +87,7 @@ b = (1/windowSize)*ones(1,windowSize);
 a = 1;
 aver_filtered_signal = filter(b,a,s_m);
 
-% figure
+figure
 plot(abs(fft(s_m)));
 
 % figure
