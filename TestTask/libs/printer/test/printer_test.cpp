@@ -66,4 +66,3 @@ TEST(PrinterTests, printing_custom) {
 	auto printerResult = printString.str();
 	ASSERT_EQ(printerResult, (" Hello Word! \n"));
 }
-//TODO: добавить тесты для демонстрации многопоточного использования, демонстрации контейнеров и их возможностей
