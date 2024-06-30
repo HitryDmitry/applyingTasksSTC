@@ -45,11 +45,11 @@ namespace Printing {
 		 * @brief getCountCreatedPrinters метод, для получения созданных принтеров
 		 * @return количество принетров находящийся в памяти
 		 */
-		static uint32_t getCountCreatedPrinters();
+		static u_int32_t getCountCreatedPrinters();
 
 		~Printer();
 	private:
-		static uint32_t countCreaterPrinters;
+		static u_int32_t countCreaterPrinters;
 		std::ostream& printStream;
 
 		void incrementCreatedPrinters();

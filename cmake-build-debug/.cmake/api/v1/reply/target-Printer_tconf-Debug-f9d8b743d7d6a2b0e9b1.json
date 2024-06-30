@@ -1,0 +1,58 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include"
+		],
+		"files" : 
+		[
+			"TestTask/libs/printer/test/config/conf.cmake",
+			"TestTask/libs/printer/unittest.cmake",
+			"TestTask/libs/printer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 18,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 4
+			}
+		]
+	},
+	"id" : "Printer_tconf::@2943423362c741623ec0",
+	"name" : "Printer_tconf",
+	"paths" : 
+	{
+		"build" : "TestTask/libs/printer",
+		"source" : "TestTask/libs/printer"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

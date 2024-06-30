@@ -1,0 +1,19 @@
+# ninja log v5
+979	1129	1719237961757609501	tddProject/binaries/tddProject	b357f19f53d79ad2
+0	869	1719237961498606581	CMakeFiles/tddProject.dir/main.cpp.o	75e86d18eda0ec37
+781	979	1719237961607607810	tddProject/binaries/lib/libPrinter.so	a7730df9b7c22694
+1	780	1719237961409605578	TestTask/libs/printer/CMakeFiles/Printer.dir/source/printer.cpp.o	ddeff64626d7fff8
+1	765	1719746328083210428	CMakeFiles/tddProject.dir/main.cpp.o	75e86d18eda0ec37
+765	975	1719746328293207969	tddProject/binaries/tddProject	b357f19f53d79ad2
+1	931	1719746714342206481	CMakeFiles/tddProject.dir/main.cpp.o	75e86d18eda0ec37
+5	1166	1719746946579653528	TestTask/libs/complexNumbers/CMakeFiles/ComplexNumbers.dir/source/complexNumbers.cpp.o	b5ed6fe8b521d947
+1	4286	1719746949696665012	googletests/gtest/CMakeFiles/gtest.dir/gmock/src/gmock-all.cc.o	47296cc33513ff11
+2	7665	1719746953068677574	googletests/gtest/CMakeFiles/gtest.dir/gtest/src/gtest-all.cc.o	e46cd9b22bae79e
+3	270	1719747076105227012	tddProject/binaries/lib/libgtest.so	fa5f7fa667ca92cd
+4	2689	1719747078528239470	TestTask/libs/complexNumbers/CMakeFiles/ComplexNumbers_t.dir/test/complexNumbers_test.cpp.o	d70393ffc9effa45
+3	2014	1719747230910128962	TestTask/libs/complexNumbers/CMakeFiles/ComplexNumbers_t.dir/test/main.cpp.o	4f32aff34d13a342
+2	2326	1719747572236679296	TestTask/libs/printer/CMakeFiles/Printer_t.dir/test/main.cpp.o	ba6a0a5e042ff728
+4	2634	1719747572543681839	TestTask/libs/printer/CMakeFiles/Printer_t.dir/test/printer_test.cpp.o	5c5f198d99c5ac3d
+2634	2802	1719747572710683223	test/Printer_t	cd03ff813507970b
+4	2398	1719748029924459869	TestTask/libs/complexNumbers/CMakeFiles/ComplexNumbers_t.dir/test/main.cpp.o	4f32aff34d13a342
+4	3082	1719748030607292977	TestTask/libs/complexNumbers/CMakeFiles/ComplexNumbers_t.dir/test/complexNumbers_test.cpp.o	d70393ffc9effa45

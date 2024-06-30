@@ -15,7 +15,7 @@ void Printing::Printer::print(const std::string& stringForPrint)
 	printStream << stringForPrint << "\n";
 }
 
-uint32_t Printing::Printer::getCountCreatedPrinters()
+u_int32_t Printing::Printer::getCountCreatedPrinters()
 {
 	return countCreaterPrinters;
 }
@@ -34,4 +34,4 @@ Printing::Printer::~Printer()
 	decrementCreatedPrinters();
 }
 
-uint32_t Printing::Printer::countCreaterPrinters = 0;
+u_int32_t Printing::Printer::countCreaterPrinters = 0;

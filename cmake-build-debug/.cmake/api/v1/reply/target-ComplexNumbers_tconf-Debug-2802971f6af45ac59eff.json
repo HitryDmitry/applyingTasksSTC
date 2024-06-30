@@ -1,0 +1,58 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include"
+		],
+		"files" : 
+		[
+			"TestTask/libs/complexNumbers/test/config/conf.cmake",
+			"TestTask/libs/complexNumbers/unittest.cmake",
+			"TestTask/libs/complexNumbers/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 4
+			}
+		]
+	},
+	"id" : "ComplexNumbers_tconf::@50e84f753430e45cc147",
+	"name" : "ComplexNumbers_tconf",
+	"paths" : 
+	{
+		"build" : "TestTask/libs/complexNumbers",
+		"source" : "TestTask/libs/complexNumbers"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

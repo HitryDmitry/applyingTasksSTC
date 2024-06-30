@@ -1,0 +1,300 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6,
+						11
+					]
+				},
+				{
+					"build" : "googletests",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-googletests-Debug-4f83269de314eaab97fa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "googletests"
+				},
+				{
+					"build" : "googletests/gtest",
+					"jsonFile" : "directory-googletests.gtest-Debug-76592a4968c4e03a0628.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "googletests/gtest",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "TestTask/libs/printer",
+					"jsonFile" : "directory-TestTask.libs.printer-Debug-03b5b85ae7298c422417.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "TestTask/libs/printer",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "TestTask/libs/exampleProject",
+					"jsonFile" : "directory-TestTask.libs.exampleProject-Debug-575ca9840940ce145779.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "TestTask/libs/exampleProject",
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "TestTask/libs/complexNumbers",
+					"jsonFile" : "directory-TestTask.libs.complexNumbers-Debug-a3fcb0b20b4fba9014a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "TestTask/libs/complexNumbers",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tddProject",
+					"targetIndexes" : 
+					[
+						6,
+						11
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "unittest",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gtest",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Printer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "exampleProject",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "ComplexNumbers",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "ComplexNumbers::@50e84f753430e45cc147",
+					"jsonFile" : "target-ComplexNumbers-Debug-6040fcfe763fbc4d41ca.json",
+					"name" : "ComplexNumbers",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ComplexNumbers_t::@50e84f753430e45cc147",
+					"jsonFile" : "target-ComplexNumbers_t-Debug-9ed263a7afbcf3aa0a76.json",
+					"name" : "ComplexNumbers_t",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ComplexNumbers_tconf::@50e84f753430e45cc147",
+					"jsonFile" : "target-ComplexNumbers_tconf-Debug-2802971f6af45ac59eff.json",
+					"name" : "ComplexNumbers_tconf",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Printer::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer-Debug-d71b9e344c4ee9ac038e.json",
+					"name" : "Printer",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Printer_t::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_t-Debug-16420798163c82ffb111.json",
+					"name" : "Printer_t",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Printer_tconf::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_tconf-Debug-f9d8b743d7d6a2b0e9b1.json",
+					"name" : "Printer_tconf",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "distclean::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-distclean-Debug-ca65aafcda9970e4b5bf.json",
+					"name" : "distclean",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exampleProject::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject-Debug-c9d33e94e1c70899a962.json",
+					"name" : "exampleProject",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exampleProject_t::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_t-Debug-ffc3ce5c984453e332be.json",
+					"name" : "exampleProject_t",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exampleProject_tconf::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_tconf-Debug-2fde94accab90e63bbc5.json",
+					"name" : "exampleProject_tconf",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest::@9a0cee8afed2a44c6706",
+					"jsonFile" : "target-gtest-Debug-848014f000ff0ba6b81b.json",
+					"name" : "gtest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tddProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tddProject-Debug-ea84252a7b1546ddd05b.json",
+					"name" : "tddProject",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dmitryg/CLionProjects/tddProject/cmake-build-debug",
+		"source" : "/home/dmitryg/CLionProjects/tddProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

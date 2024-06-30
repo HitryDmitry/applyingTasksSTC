@@ -1,26 +1,18 @@
 cmake_minimum_required(VERSION 3.0)
 
-project (exampleProject)
+project (ComplexNumbers)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 file(GLOB_RECURSE  SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
-add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES}
+        test/complexNumbers_test.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME})
 
 
-target_link_libraries(
-    ${PROJECT_NAME}
-    Qt6::Core
-    Qt6::Gui
-    Qt6::Widgets
-)
-
 include("unittest.cmake")
-

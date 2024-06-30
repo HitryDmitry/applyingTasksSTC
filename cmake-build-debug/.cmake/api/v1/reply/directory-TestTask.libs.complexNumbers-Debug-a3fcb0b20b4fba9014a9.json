@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "TestTask/libs/complexNumbers",
+		"source" : "TestTask/libs/complexNumbers"
+	}
+}
